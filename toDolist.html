@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>To Do List</title>
+    <style>
+        body{
+            background-image: linear-gradient(#c56cf5, #f39bd7);
+            background-repeat:no-repeat;
+            height:100%;
+            background-attachment: fixed;
+            margin:0;
+        }
+        .container{
+            margin:auto;
+            height:600px;
+            width:450px;
+            margin:auto;
+            padding-left: 3px;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            font-size: x-large;
+            border-style: double;
+            border-width: 5px;
+            border-color: brown;
+            background-color: rgb(44, 15, 82);
+            color: #eeafda;
+
+        }
+        h1,h3{
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color:brown;
+
+        }
+        ul{
+            list-style-type:none;
+
+        }
+        ul li span{ 
+           position: absolute;
+           top:0;
+           right:0;
+           width:50px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <h1><u>To-do List</u></h1>
+    <p id="demo"></p>
+    <input type="text" id="task" placeholder="Enter task here" required>
+    <button onclick="app()"><i class="fa-duotone fa-plus"></i></button>
+    <button onclick="del()">Del</button>
+    <h3>Today you have to perform</h3>
+    <ul id="work">
+        <li>Waking at 6<span>x</span></li>
+    </ul>
+</div>
+<script src="https://kit.fontawesome.com/f4c37d7c2e.js" crossorigin="anonymous"></script>
+    <script>
+        const a = document.createElement("li");
+        var textnode;
+        
+         function app()
+         {
+            const a = document.createElement("li");
+            var textnode;
+            let x = document.getElementById("task").value ;
+            if(x>=1&&x<=30)
+            {
+                delt(x);
+            }
+            p = "";
+            p += x;
+            textnode = document.createTextNode(p);
+            a.appendChild(textnode);
+            document.getElementById("work").appendChild(a);
+         }
+         function del() {
+         const list = document.getElementById("work");
+         list.removeChild(list.firstElementChild);
+}
+function delt(x)
+{
+     var b = document.querySelectorAll(li)[x].innerHTML;
+     b.removeChild(b);
+
+}
+
+
+       var today = new Date();
+        
+        var date =today.getDate()+'-'+(today.getMonth()+1)+'-'+ today.getFullYear();
+        var dateTime = date;
+        
+        document.getElementById("demo").innerHTML = ("Today is "+"<b>"+dateTime+"</b>");
+    </script>
+</body>
+</html>
