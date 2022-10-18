@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        h1{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-indent: 1px;
+        text-align: center;
+        font-size:95px;
+        }
+        #gog{
+            width:700px;
+            height:450px;  
+            margin:auto;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            border-width: 5px;
+            border-style: double;
+            background-color: antiquewhite;
+        }
+        p{
+            text-align: center;
+            font-size: 20px;
+        }
+        button{
+            border-radius:15%;
+            float:right;  
+            font-size: medium;
+            margin-right: 50px;
+        }
+        .toggle{
+            visibility: hidden;
+        }
+        button{
+            color:aqua;
+            background-color: black;
+        }
+    </style>
+</head>
+<body  bgcolor="black">
+    <h1 id="dem">GOOGLE</h1>
+    <div id="gog">
+    <p id="g">Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.
+
+        Google's stated mission is to "organize the world's information and make it universally accessible and useful." It is the top search engine in the world, a position that has generated criticism and concern about the power it has to influence the flow of online information.
+        
+        Google is so dominant that the term "Google" can also be used as a verb, so that when someone searches for something on Google, they may say they "Googled" it.The domain google.com was registered on September 15, 1997, and the company incorporated on September 4, 1998. 
+        The picture below is a capture of the site from The Internet Archive of what Google looked like in 1998.</p>
+
+    <p class = "toggle" id="click">"In March 1999, the company moved its offices to Palo Alto, California, which is home to several prominent Silicon Valley technology start-ups.The next year, Google began selling advertisements associated with search keywords against Page and Brin's initial opposition toward an advertising-funded search engine.To maintain an uncluttered page design, advertisements were solely text-based. In June 2000, it was announced that Google would become the default search engine provider for Yahoo!, one of the most popular websites at the time, replacing Inktomi.";</p>
+        <button onclick="fun()">Show more</button>
+        </div>
+        <script>
+            var ch=0;
+            function fun()
+            {
+                document.getElementById("click").classList.toggle("toggle");
+                if(ch%2==0)
+                document.querySelector("button").innerHTML = "Show less";
+                else
+                document.querySelector("button").innerHTML = "Show more";
+               ch++;
+            }
+            const randColor = () =>  {
+       return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+        }
+        document.getElementById("dem").style.color = randColor(); 
+        </script>
+    
+</body>
+</html>
