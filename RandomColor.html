@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play with color</title>
+
+</head>
+<body>
+    <div class="cont">
+        <h1>Play with colors!</h1>
+    <input type="text" placeholder="Enter your name here" id="inp"><br>
+    <button onclick="clicks()">Click here to change color</button>
+    <p id="dem"></p>
+  
+    </div>
+    <style>
+        body{
+            
+            background-size: cover;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("color.jpeg");
+            opacity: 1.0;
+            height:563px;
+        }
+       .cont{
+           margin:auto;
+           height:600px;
+           width:450px;
+           margin:auto;
+           padding-left: 3px;
+           top:0;
+           bottom:0;
+           left:0;
+           right:0;
+           font-size: x-large;
+           border-style: inset;
+           border-width: 5px;
+           border-color: brown;
+           background-color: rgb(186, 14, 225);
+           color: #eeafda;
+           
+       }
+   </style>
+    <script>  
+     function clicks()
+    {
+            var a = document.getElementById("inp").value;
+            document.getElementById("dem").innerHTML = "<font>"+a+"</font>";
+            document.getElementById("dem").style.color = randColor();          
+            document.getElementById("dem").style.fontSize = "70px"; 
+            document.getElementById("dem").style.textAlign = "center";
+           
+
+    }
+    const randColor = () =>  {
+    return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+}
+
+
+
+
+
+    </script>
+</body>
+</html>
